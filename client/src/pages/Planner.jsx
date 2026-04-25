@@ -28,7 +28,7 @@ export default function Planner() {
 
   const fetchTasks = async (token) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/tasks`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -62,7 +62,7 @@ export default function Planner() {
   const addTask = async (text, category) => {
     if (!text.trim()) return;
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function Planner() {
     setChecklist(checklist.map(item => item.id === id ? { ...item, packed: !currentPackedStatus } : item));
     
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export default function Planner() {
 
   const deleteItem = async (id) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${userInfo.token}`
