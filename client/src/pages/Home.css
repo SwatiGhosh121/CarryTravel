@@ -1,0 +1,209 @@
+/* Home Page Specific Styles */
+
+/* Base Section Formatting */
+.section-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-description {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: var(--spacing-md) auto 0;
+}
+
+/* 1. HERO SECTION */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-4xl) 0;
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary-light) 100%);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-2xl);
+  max-width: 650px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 2. FEATURES GRID (Why CarryTravel) */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.feature-card {
+  background: var(--color-surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary-light);
+}
+
+.feature-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-xl);
+  color: var(--color-primary);
+}
+
+.feature-icon {
+  font-size: 1.75rem;
+}
+
+.feature-card h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+}
+
+/* 3. HOW IT WORKS SECTION */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  position: relative;
+}
+
+/* Optional line connecting steps for larger screens */
+@media (min-width: 992px) {
+  .steps-container::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: var(--color-border);
+    z-index: 1;
+  }
+}
+
+.step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: var(--color-background);
+  padding: var(--spacing-md);
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--spacing-md);
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.step-number {
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--color-border);
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.step-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 4. CTA SECTION */
+.cta-section {
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  color: var(--color-surface);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cta-subtitle {
+  color: #94A3B8;
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.125rem;
+}
+
+.cta-actions .btn {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
